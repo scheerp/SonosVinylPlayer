@@ -23,13 +23,14 @@ try:
 		if emptyCount > 3:
 			print("pause Music")
 			stopR = requests.get("http://192.168.2.149:5005/pauseAll")
+			emptyCount = 0
 
 		time.sleep(1)
 		if (text == None):
 			emptyCount += 1
 		else:
 			emptyCount = 0
-			if (previousRead != text):
+			if (previousRead != text and text.strip().find("spotify") != -1):
 				getRequest = "http://192.168.2.149:5005/Foyer/spotify/now/" + text.strip()
 				r = requests.get(getRequest)
 				previousRead = text
