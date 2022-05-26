@@ -39,6 +39,8 @@ try:
 		sleep(5)
 		if (text == None):
 			emptyCount += 1
+		else:
+			emptyCount = 0
 except KeyboardInterrupt:
 	GPIO.cleanup()
 	raise
