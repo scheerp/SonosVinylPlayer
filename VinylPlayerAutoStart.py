@@ -20,7 +20,7 @@ try:
 		id, text = reader.read_no_block()
 
 		if emptyCount > 4:
-			#print("pause Music")
+			print("pause Music")
 			stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 			emptyCount = 0
 			previousRead = "nix"
