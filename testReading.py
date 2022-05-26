@@ -34,11 +34,11 @@ try:
 	while emptyCount < 4:
 		print("Hold a tag near the reader")
 		print(emptyCount)
-		id, text = reader.read()
-		print(reader.read())
+		id, text = reader.read_no_block()
 		print("ID: %s\nText: %s" % (id,text))
 		sleep(5)
-		emptyCount += 1
+		if (text.find("spotify") != 1):
+			emptyCount += 1
 except KeyboardInterrupt:
 	GPIO.cleanup()
 	raise
