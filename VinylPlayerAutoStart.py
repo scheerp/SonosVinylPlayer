@@ -38,7 +38,7 @@ try:
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
 				time.sleep(0.2)
-			elif (text.strip().find("spotify") != -1):
+			elif (text.strip().find("spotify") != -1 and text != None):
 				print("weiter wie gehabt")
 			else:
 				print("Invalid URI", text)
