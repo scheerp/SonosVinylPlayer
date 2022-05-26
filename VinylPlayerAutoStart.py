@@ -39,8 +39,8 @@ try:
 				pixels.fill((0, 200, 0))
 				time.sleep(0.5)
 				pixels.fill((0, 200, 180))
-			#elif (text.strip().find("spotify") != -1 and text != None):
-				#print("weiter wie gehabt")
+			elif (text.strip().find("spotify") != -1 and text != None):
+				print("weiter wie gehabt")
 				#pixels.fill((0, 200, 180))
 			else:
 				print("Invalid URI", text)
@@ -56,6 +56,7 @@ try:
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
 				time.sleep(0.1)
+				pixels.fill((250, 200, 180))
 
 except KeyboardInterrupt:
 	GPIO.cleanup()
