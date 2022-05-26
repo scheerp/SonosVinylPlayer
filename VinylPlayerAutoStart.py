@@ -29,7 +29,7 @@ while True:
 		emptyCount += 1
 	else:
 		emptyCount = 0
-		if (text.find("spotify") != -1 and previousRead != text):
+		if (previousRead != text):
 			getRequest = "http://192.168.2.149:5005/Foyer/spotify/now/" + text.strip()
 			r = requests.get(getRequest)
 			previousRead = text
@@ -37,9 +37,11 @@ while True:
 			time.sleep(0.2)
 			pixels.fill((0, 0, 0))
 			time.sleep(0.2)
-		else:
-			print("Invalid URI")
+		elif (text.find("spotify") != -1):
+			print("Invalid URI", text)
 			pixels.fill((200, 0, 0))
 			time.sleep(0.2)
 			pixels.fill((0, 0, 0))
 			time.sleep(0.2)
+		else:
+			print("weiter wie gehabt")
