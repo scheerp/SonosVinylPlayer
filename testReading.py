@@ -13,12 +13,12 @@ reader = SimpleMFRC522()
 failCounter = 0
 successCounter = "nix"
 
-while True:
+while failCounter < 4:
 	GPIO.cleanup()
-	readingSuccess = False
+	time.sleep(10)
 	id, text = reader.read()
 	print("start reading")
 	pixels.fill((40,0,80))
-	time.sleep(10)
 	print(text)
+	failCounter +=1
 	
