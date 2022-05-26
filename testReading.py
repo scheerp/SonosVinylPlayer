@@ -28,15 +28,17 @@ from time import sleep
 import sys
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
+emptyCount = 0
 
 try:
-	while True:
+	while emptyCount < 4:
 		print("Hold a tag near the reader")
+		print(emptyCount)
 		id, text = reader.read()
 		print(reader.read())
 		print("ID: %s\nText: %s" % (id,text))
 		sleep(5)
+		emptyCount += 1
 except KeyboardInterrupt:
-	print(reader.read())
 	GPIO.cleanup()
 	raise
