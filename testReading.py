@@ -37,5 +37,6 @@ try:
 		print("ID: %s\nText: %s" % (id,text))
 		sleep(5)
 except KeyboardInterrupt:
+	print(reader.read())
 	GPIO.cleanup()
 	raise
