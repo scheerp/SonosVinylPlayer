@@ -37,7 +37,7 @@ try:
 		id, text = reader.read_no_block()
 		print("ID: %s\nText: %s" % (id,text))
 		sleep(5)
-		if (text.find("spotify") != 1):
+		if (text == None):
 			emptyCount += 1
 except KeyboardInterrupt:
 	GPIO.cleanup()
