@@ -59,6 +59,6 @@ try:
 				pixels.fill((250, 200, 180))
 
 except KeyboardInterrupt:
-	GPIO.cleanup()
 	pixels.fill((0, 0, 0))
+	GPIO.cleanup()
 	raise
