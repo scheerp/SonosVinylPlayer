@@ -12,7 +12,7 @@ reader = SimpleMFRC522()
 
 emptyCount = 0
 previousRead = "nix"
-pixels.fill((250, 200, 10))
+pixels.fill((255, 204, 25))
 
 try:
 	while True:
@@ -24,7 +24,7 @@ try:
 			stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 			emptyCount = 0
 			previousRead = "nix"
-			pixels.fill((250, 200, 10))
+			pixels.fill((255, 204, 25))
 
 		time.sleep(1)
 		if (text == None):
@@ -56,7 +56,7 @@ try:
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
 				time.sleep(0.1)
-				pixels.fill((250, 200, 180))
+				pixels.fill((255, 204, 25))
 
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
