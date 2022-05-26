@@ -24,7 +24,7 @@ while True:
 		print("pause Music")
 		stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 
-	sleep(1)
+	time.sleep(1)
 	if (text == None):
 		emptyCount += 1
 	else:
