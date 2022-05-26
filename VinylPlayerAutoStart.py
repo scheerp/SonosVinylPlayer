@@ -14,7 +14,7 @@ failCounter = 0
 previousRead = "nix"
 
 while True:
-	print("cleanup")
+	print("added by my computer")
 	GPIO.cleanup()
 	print("Ready for some tunes!")
 	pixels.fill((40,0,80))
