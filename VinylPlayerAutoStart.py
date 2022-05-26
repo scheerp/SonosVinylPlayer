@@ -12,7 +12,7 @@ reader = SimpleMFRC522()
 
 emptyCount = 0
 previousRead = "nix"
-pixels.fill((250, 200, 180))
+pixels.fill((250, 200, 10))
 
 try:
 	while True:
