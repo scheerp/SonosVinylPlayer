@@ -20,5 +20,7 @@ while failCounter < 4:
 	print("start reading")
 	pixels.fill((40,0,80))
 	print(text)
-	failCounter +=1
+	if (text.find("spotify") != 1)
+		failCounter +=1
+		print("failed ++", failCounter)
 	
