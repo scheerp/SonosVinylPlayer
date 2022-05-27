@@ -19,8 +19,9 @@ try:
 	while True:
 		#print("Ready for some tunes!")
 		id, text = reader.read_no_block()
-		print("emptyCount", emptyCount)
-		print("text", text)
+		#print("emptyCount", emptyCount)
+		#print("text", text)
+		print("countIsActive", countIsActive)
 
 		if countIsActive:
 			if emptyCount > 3:
