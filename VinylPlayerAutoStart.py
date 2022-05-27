@@ -24,7 +24,7 @@ try:
 		print("countIsActive", countIsActive)
 
 		if countIsActive:
-			if emptyCount > 3:
+			if emptyCount > 5:
 				print("pause Music")
 				stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 				emptyCount = 0
