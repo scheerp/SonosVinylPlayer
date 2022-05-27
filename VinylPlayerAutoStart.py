@@ -19,8 +19,8 @@ try:
 	while True:
 		#print("Ready for some tunes!")
 		id, text = reader.read_no_block()
-		#print("emptyCount", emptyCount)
-		#print("text", text)
+		print("emptyCount", emptyCount)
+		print("text", text)
 		print("countIsActive", countIsActive)
 
 		if countIsActive:
@@ -32,9 +32,9 @@ try:
 				pixels.fill((255, 204, 25))
 				countIsActive = False
 
-		time.sleep(1)
-		if (text == None):
-			emptyCount += 1
+			time.sleep(1)
+			if (text == None):
+				emptyCount += 1
 		else:
 			emptyCount = 0
 			if (previousRead != text and text.strip().find("spotify") != -1):
