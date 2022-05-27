@@ -37,33 +37,34 @@ try:
 				emptyCount += 1
 		else:
 			emptyCount = 0
-			if (previousRead != text and text.strip().find("spotify") != -1):
-				print("play Music")
-				getRequest = "http://192.168.2.149:5005/Wohnzimmer/spotify/now/" + text.strip()
-				r = requests.get(getRequest)
-				previousRead = text
-				pixels.fill((0, 200, 0))
-				time.sleep(0.5)
-				pixels.fill((0, 200, 180))
-				countIsActive = True
-			elif (text.strip().find("spotify") != -1 and text != None):
-				print("weiter wie gehabt")
-				#pixels.fill((0, 200, 180))
-			else:
-				print("Invalid URI", text)
-				pixels.fill((200, 0, 0))
-				time.sleep(0.2)
-				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((200, 0, 0))
-				time.sleep(0.2)
-				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((200, 0, 0))
-				time.sleep(0.2)
-				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((255, 204, 25))
+			if text != None:
+				if (previousRead != text and text.strip().find("spotify") != -1):
+					print("play Music")
+					getRequest = "http://192.168.2.149:5005/Wohnzimmer/spotify/now/" + text.strip()
+					r = requests.get(getRequest)
+					previousRead = text
+					pixels.fill((0, 200, 0))
+					time.sleep(0.5)
+					pixels.fill((0, 200, 180))
+					countIsActive = True
+				elif (text.strip().find("spotify") != -1):
+					print("weiter wie gehabt")
+					#pixels.fill((0, 200, 180))
+				else:
+					print("Invalid URI", text)
+					pixels.fill((200, 0, 0))
+					time.sleep(0.2)
+					pixels.fill((0, 0, 0))
+					time.sleep(0.1)
+					pixels.fill((200, 0, 0))
+					time.sleep(0.2)
+					pixels.fill((0, 0, 0))
+					time.sleep(0.1)
+					pixels.fill((200, 0, 0))
+					time.sleep(0.2)
+					pixels.fill((0, 0, 0))
+					time.sleep(0.1)
+					pixels.fill((255, 204, 25))
 
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
