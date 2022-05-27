@@ -49,6 +49,7 @@ try:
 				countIsActive = True
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
+				emptyCount = 0
 				#pixels.fill((0, 200, 180))
 			else:
 				print("Invalid URI", text)
@@ -65,6 +66,7 @@ try:
 				pixels.fill((0, 0, 0))
 				time.sleep(0.1)
 				pixels.fill((255, 204, 25))
+				emptyCount = 0
 
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
