@@ -36,7 +36,7 @@ try:
 			emptyCount = 0
 			if (previousRead != text and text.strip().find("spotify") != -1):
 				print("play Music")
-				getRequest = "http://192.168.2.149:5005/Foyer/spotify/now/" + text.strip()
+				getRequest = "http://192.168.2.149:5005/Wohnzimmer/spotify/now/" + text.strip()
 				r = requests.get(getRequest)
 				previousRead = text
 				pixels.fill((0, 200, 0))
@@ -66,3 +66,9 @@ except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
 	GPIO.cleanup()
 	raise
+
+https://open.spotify.com/track/2wY7LvJjvQ9cJEndk0AbY8?si=348ec514d9c54b67
+spotify:track:2wY7LvJjvQ9cJEndk0AbY8
+
+https://open.spotify.com/album/3KBHQIHTtwBlOeKh3mXOAv?si=NpykjVWASdiw8Nu_KsvF8A
+spotify:album:3KBHQIHTtwBlOeKh3mXOAv
