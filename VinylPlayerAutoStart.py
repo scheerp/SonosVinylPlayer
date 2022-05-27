@@ -32,7 +32,7 @@ try:
 				pixels.fill((255, 204, 25))
 				countIsActive = False
 
-			time.sleep(1)
+			time.sleep(2)
 			if (text == None):
 				emptyCount += 1
 		else:
