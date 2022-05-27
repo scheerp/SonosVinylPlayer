@@ -24,7 +24,7 @@ try:
 		print("countIsActive", countIsActive)
 
 		if countIsActive:
-			if emptyCount > 5:
+			if emptyCount > 3:
 				print("pause Music")
 				stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 				emptyCount = 0
@@ -32,7 +32,7 @@ try:
 				pixels.fill((255, 204, 25))
 				countIsActive = False
 
-			time.sleep(2)
+			time.sleep(1)
 			if (text == None):
 				emptyCount += 1
 
