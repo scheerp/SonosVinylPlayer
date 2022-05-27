@@ -66,9 +66,3 @@ except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
 	GPIO.cleanup()
 	raise
-
-https://open.spotify.com/track/2wY7LvJjvQ9cJEndk0AbY8?si=348ec514d9c54b67
-spotify:track:2wY7LvJjvQ9cJEndk0AbY8
-
-https://open.spotify.com/album/3KBHQIHTtwBlOeKh3mXOAv?si=NpykjVWASdiw8Nu_KsvF8A
-spotify:album:3KBHQIHTtwBlOeKh3mXOAv
