@@ -12,7 +12,7 @@ import neopixel
 pixel_pin = board.D18
 
 # The number of NeoPixels
-num_pixels = 2
+num_pixels = 4
 
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
@@ -26,8 +26,8 @@ pixels = neopixel.NeoPixel(
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
-    if pos < 100 or pos > 255:
-        r = g = b = 100
+    if pos < 0 or pos > 255:
+        r = g = b = 0
     elif pos < 85:
         #r = int(pos * 3)
         g = int(255 - pos * 3)
