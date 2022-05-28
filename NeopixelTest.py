@@ -42,7 +42,7 @@ def wheel(pos):
         pos -= 170
         #r = 0
         g = int(pos * 3)
-        n = 0
+        b = 0
         #b = int(255 - pos * 3)
     return (0, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
