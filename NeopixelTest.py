@@ -19,7 +19,7 @@ num_pixels = 6
 ORDER = neopixel.GRB
 
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.4, auto_write=False, pixel_order=ORDER
 )
 
 
@@ -55,4 +55,4 @@ def rainbow_cycle(wait):
 
 
 while True:
-    rainbow_cycle(0.01)  # rainbow cycle with 1ms delay per step
+    rainbow_cycle(0.03)  # rainbow cycle with 1ms delay per step
