@@ -24,7 +24,7 @@ pixels = neopixel.NeoPixel(
 )
 
 class Pixel:
-  def __init__(index, g, b):
+  def __init__(self, index, g, b):
     self.index = index
     self.g = g
     self.b = b
@@ -33,4 +33,4 @@ class Pixel:
 
 p0 = Pixel(0, 100, 150)
 
-p1 = Pixel(0, 255, 100)
+p1 = Pixel(1, 255, 100)
