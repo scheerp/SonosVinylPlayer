@@ -15,11 +15,11 @@ class Pixel:
     self.g = g
     self.b = b
 
-  g_factor = -3
-  b_factor = 3
-
   def colorPixel(self):
     time.sleep(0.03)
+    
+    g_factor = -3
+    b_factor = 3
     
     if self.g < 0:
       g_factor = 3
