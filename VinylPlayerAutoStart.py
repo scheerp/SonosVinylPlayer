@@ -76,18 +76,16 @@ try:
 				getRequest = "http://192.168.2.149:5005/Wohnzimmer/spotify/now/" + text.strip()
 				r = requests.get(getRequest)
 				previousRead = text
-				
+				emptyCount = 0
+				countIsActive = True
+			elif (text.strip().find("spotify") != -1):
+				print("weiter wie gehabt")
 				p0.colorPixel()
 				p1.colorPixel()
 				p2.colorPixel()
 				p3.colorPixel()
 				p4.colorPixel()
 				p5.colorPixel()
-
-				emptyCount = 0
-				countIsActive = True
-			elif (text.strip().find("spotify") != -1):
-				print("weiter wie gehabt")
 				emptyCount = 0
 				#pixels.fill((0, 200, 180))
 			else:
