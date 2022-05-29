@@ -22,6 +22,7 @@ ORDER = neopixel.GRB
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.4, auto_write=False, pixel_order=ORDER
 )
+pixels[0] = (100, 150, 200)
 
 class Pixel:
   def __init__(self, index, g, b):
