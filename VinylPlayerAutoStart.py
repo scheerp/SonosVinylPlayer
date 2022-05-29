@@ -82,7 +82,7 @@ try:
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
 
-				for x in range(10):
+				for x in range(30):
 					p0.colorPixel()
 					p1.colorPixel()
 					p2.colorPixel()
