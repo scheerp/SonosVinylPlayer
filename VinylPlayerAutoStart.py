@@ -58,6 +58,7 @@ def vynil_player():
 	global previousRead
 	global run_aurora_animation
 	global pausingThreshhold
+	global emptyCount
 
 	while True:
 		#print("Ready for some tunes!")
