@@ -76,7 +76,7 @@ try:
 				stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 				emptyCount = 0
 				previousRead = "nix"
-				thread_aurora.start()
+				pixels.fill((255, 204, 25))
 				countIsActive = False
 
 			#time.sleep(0.05)
@@ -91,6 +91,8 @@ try:
 				previousRead = text
 				emptyCount = 0
 				countIsActive = True
+				thread_aurora.start()
+				
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
 
