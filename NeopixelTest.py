@@ -27,6 +27,8 @@ g = random.randint(100, 255)
 b = random.randint(90, 255)
 
 def wheel2():
+    global g
+    global b
     direction_g = random.choice([-3, 3])
     direction_b = random.choice([-3, 3])
     g += direction_g
