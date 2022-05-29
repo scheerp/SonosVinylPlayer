@@ -40,7 +40,7 @@ class Pixel:
     self.g += self.g_factor
     self.b += self.b_factor
     pixels[self.index] = (0, self.g, self.b)
-    time.sleep(0.001)
+    time.sleep(0.005)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
 p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
@@ -48,7 +48,6 @@ p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
 p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
 p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
 p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
-
 
 try:
 	while True:
