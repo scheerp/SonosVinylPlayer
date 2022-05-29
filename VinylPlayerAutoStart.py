@@ -60,7 +60,7 @@ def update_aurora():
 		p4.colorPixel()
 		p5.colorPixel()
 
-thread_aurora = Tread(target=update_aurora)
+thread_aurora = Thread(target=update_aurora)
 
 try:
 	while True:
