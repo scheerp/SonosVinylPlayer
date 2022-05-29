@@ -16,7 +16,7 @@ reader = SimpleMFRC522()
 countIsActive = False
 emptyCount = 0
 previousRead = "nix"
-run_aurora_animation = True
+run_aurora_animation = False
 pixels.fill((255, 204, 25))
 
 class Pixel:
@@ -108,13 +108,14 @@ def update_aurora():
 	global run_aurora_animation
 	print("started thread")
 
-	while run_aurora_animation:
-		p0.colorPixel()
-		p1.colorPixel()
-		p2.colorPixel()
-		p3.colorPixel()
-		p4.colorPixel()
-		p5.colorPixel()
+	while True:
+		if run_aurora_animation:
+			p0.colorPixel()
+			p1.colorPixel()
+			p2.colorPixel()
+			p3.colorPixel()
+			p4.colorPixel()
+			p5.colorPixel()
 
 	pixels.fill((255, 204, 25))
 	print("end of thread")
