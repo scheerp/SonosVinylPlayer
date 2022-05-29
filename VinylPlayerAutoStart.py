@@ -51,18 +51,7 @@ p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
 p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
 p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
-def update_aurora():
-	while True:
-		p0.colorPixel()
-		p1.colorPixel()
-		p2.colorPixel()
-		p3.colorPixel()
-		p4.colorPixel()
-		p5.colorPixel()
-
-thread_aurora = Thread(target=update_aurora)
-
-try:
+def vynil_player():
 	while True:
 		# print("Ready for some tunes!")
 		id, text = reader.read_no_block()
@@ -92,7 +81,7 @@ try:
 				emptyCount = 0
 				countIsActive = True
 				thread_aurora.start()
-				
+
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
 
@@ -105,6 +94,23 @@ try:
 				pixels.fill((0, 0, 0))
 				emptyCount = 0
 
+
+
+def update_aurora():
+	while True:
+		p0.colorPixel()
+		p1.colorPixel()
+		p2.colorPixel()
+		p3.colorPixel()
+		p4.colorPixel()
+		p5.colorPixel()
+
+thread_aurora = Thread(target=update_aurora)
+thread_vynil_player = Thread(targer=vynil_player)
+
+
+try:
+	thread_vynil_player.start()
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
 	GPIO.cleanup()
