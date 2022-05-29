@@ -54,7 +54,7 @@ p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 def vynil_player():
 	global countIsActive
 	global previousRead
-	
+
 	while True:
 		# print("Ready for some tunes!")
 		id, text = reader.read_no_block()
@@ -100,6 +100,7 @@ def vynil_player():
 
 
 def update_aurora():
+	print("started thread")
 	while True:
 		p0.colorPixel()
 		p1.colorPixel()
@@ -107,6 +108,8 @@ def update_aurora():
 		p3.colorPixel()
 		p4.colorPixel()
 		p5.colorPixel()
+	
+	print("end of thread")
 
 thread_aurora = Thread(target=update_aurora)
 thread_vynil_player = Thread(target=vynil_player)
