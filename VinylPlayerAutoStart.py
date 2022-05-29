@@ -39,8 +39,8 @@ class Pixel:
 
     self.g += self.g_factor
     self.b += self.b_factor
+	print("update!", self.g, self.b)
     pixels[self.index] = (0, self.g, self.b)
-    time.sleep(0.005)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
 p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
@@ -51,11 +51,11 @@ p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 try:
 	while True:
-		#print("Ready for some tunes!")
+		# print("Ready for some tunes!")
 		id, text = reader.read_no_block()
-		print("emptyCount", emptyCount)
-		print("text", text)
-		print("countIsActive", countIsActive)
+		# print("emptyCount", emptyCount)
+		# print("text", text)
+		# print("countIsActive", countIsActive)
 
 		if countIsActive:
 			if emptyCount > 3:
