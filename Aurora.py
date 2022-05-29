@@ -31,7 +31,7 @@ class Pixel:
 
     self.g += g_factor
     #self.b += b_factor
-
+    print('G:', g, 'FACTOR:', g_factor)
     pixels[self.index] = (0, self.g, 0)
     time.sleep(0.3)
 
