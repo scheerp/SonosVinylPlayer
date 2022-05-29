@@ -42,7 +42,6 @@ class Pixel:
 
 		self.g += self.g_factor
 		self.b += self.b_factor
-		#print("update!", self.g, self.b)
 		pixels[self.index] = (0, self.g, self.b)
 		time.sleep(0.001)
 
@@ -59,7 +58,7 @@ def vynil_player():
 	global run_aurora_animation
 
 	while True:
-		# print("Ready for some tunes!")
+		print("Ready for some tunes!")
 		id, text = reader.read_no_block()
 		# print("emptyCount", emptyCount)
 		# print("text", text)
@@ -88,7 +87,8 @@ def vynil_player():
 				emptyCount = 0
 				countIsActive = True
 				run_aurora_animation = True
-				thread_aurora.start()
+				if not thread_aurora.is_alive():
+					thread_aurora.start()
 
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
@@ -118,6 +118,8 @@ def update_aurora():
 		p4.colorPixel()
 		p5.colorPixel()
 	
+	
+	pixels.fill((255, 204, 25))
 	print("end of thread")
 
 thread_aurora = Thread(target=update_aurora)
