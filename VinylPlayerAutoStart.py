@@ -7,7 +7,7 @@ import time
 import board
 import neopixel
 
-pixels = neopixel.NeoPixel(board.D18, 2)
+pixels = neopixel.NeoPixel(board.D18, 6)
 reader = SimpleMFRC522()
 
 countIsActive = False
@@ -56,16 +56,6 @@ try:
 				pixels.fill((200, 0, 0))
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((200, 0, 0))
-				time.sleep(0.2)
-				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((200, 0, 0))
-				time.sleep(0.2)
-				pixels.fill((0, 0, 0))
-				time.sleep(0.1)
-				pixels.fill((255, 204, 25))
 				emptyCount = 0
 
 except KeyboardInterrupt:
