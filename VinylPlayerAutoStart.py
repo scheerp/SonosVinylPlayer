@@ -71,9 +71,9 @@ def vynil_player():
 				stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 				emptyCount = 0
 				previousRead = "nix"
+				run_aurora_animation = False
 				pixels.fill((255, 204, 25))
 				countIsActive = False
-				run_aurora_animation = False
 
 			#time.sleep(0.05)
 			if (text == None):
@@ -87,6 +87,7 @@ def vynil_player():
 				previousRead = text
 				emptyCount = 0
 				countIsActive = True
+				run_aurora_animation = True
 				thread_aurora.start()
 
 			elif (text.strip().find("spotify") != -1):
@@ -97,18 +98,18 @@ def vynil_player():
 				#pixels.fill((0, 200, 180))
 			else:
 				print("Invalid URI", text)
+				run_aurora_animation = False
 				pixels.fill((200, 0, 0))
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
 				emptyCount = 0
-				run_aurora_animation = False
 
 
 
 def update_aurora():
 	global run_aurora_animation
 	print("started thread")
-	
+
 	while run_aurora_animation:
 		p0.colorPixel()
 		p1.colorPixel()
