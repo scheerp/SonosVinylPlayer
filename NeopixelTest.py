@@ -23,16 +23,6 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.4, auto_write=False, pixel_order=ORDER
 )
 
-
-def wheel2():
-    
-    g = random.randint(100, 255)
-    b = random.randint(90, 255)
-    direction_g = random.choice([-3, 3])
-    direction_b = random.choice([-3, 3])
-    g = g + direction_g
-    b = b + direction_b
-
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
@@ -52,16 +42,7 @@ def wheel(pos):
         r = 0
         g = int(pos * 3)
         b = int(255 - pos * 3)
-    return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
-
-
-def auroro_cycle(wait):
-    for j in range(255):
-        for i in range(num_pixels):
-            pixel_index = (i * 256 // num_pixels) + j
-            pixels[i] = wheel2()
-        pixels.show()
-        time.sleep(wait)
+    return (0, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
 def rainbow_cycle(wait):
     for j in range(255):
@@ -73,4 +54,4 @@ def rainbow_cycle(wait):
 
 
 while True:
-    auroro_cycle(0.03)  # rainbow cycle with 1ms delay per step
+    rainbow_cycle(0.03)  # rainbow cycle with 1ms delay per step
