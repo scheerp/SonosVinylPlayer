@@ -17,25 +17,25 @@ previousRead = "nix"
 pixels.fill((255, 204, 25))
 
 class Pixel:
-  def __init__(self, index, g, b):
-	self.index = index
-	self.g = g
-	self.b = b
-	self.g_factor =random.randint(-5, 5)
-	self.b_factor =random.randint(-5, 5)
+	def __init__(self, index, g, b):
+		self.index = index
+		self.g = g
+		self.b = b
+		self.g_factor =random.randint(-5, 5)
+		self.b_factor =random.randint(-5, 5)
 
-  def colorPixel(self):
-	if self.b_factor == 0:
-	  self.b_factor +=1
+	def colorPixel(self):
+		if self.b_factor == 0:
+			self.b_factor +=1
 
 	if self.g_factor == 0:
-	  self.g_factor += 1
+		self.g_factor += 1
 	
 	if self.g < 30 or self.g > 240:
-	  self.g_factor = self.g_factor * -1
+		self.g_factor = self.g_factor * -1
 	
 	if self.b < 50 or self.b > 240:
-	  self.b_factor = self.b_factor * -1
+		self.b_factor = self.b_factor * -1
 
 	self.g += self.g_factor
 	self.b += self.b_factor
