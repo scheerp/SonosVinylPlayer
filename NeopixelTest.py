@@ -34,7 +34,7 @@ def wheel(pos):
         b = 100
     elif pos < 170:
         pos -= 85
-        g = 100
+        g = 0
         b = int(pos * 3)
     else:
         pos -= 170
