@@ -21,7 +21,7 @@ class Pixel:
     #b_factor = 3
     
     if self.g < 3 or self.g > 252:
-      g_factor = g_factor * -1
+      global g_factor *= -1
     
     #if self.b < 3:
       #b_factor = 3
