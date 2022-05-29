@@ -6,6 +6,7 @@ import requests
 import time
 import board
 import neopixel
+import random
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 reader = SimpleMFRC522()
