@@ -44,7 +44,6 @@ class Pixel:
 		self.g += self.g_factor
 		self.b += self.b_factor
 		pixels[self.index] = (0, self.g, self.b)
-		time.sleep(0.001)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
 p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
@@ -92,9 +91,7 @@ def vynil_player():
 				run_aurora_animation = True
 
 			elif (text.strip().find("spotify") != -1):
-				print("weiter wie gehabt")
 				run_aurora_animation = True
-
 				emptyCount = 0
 				#pixels.fill((0, 200, 180))
 			else:
@@ -118,6 +115,7 @@ def update_aurora():
 			p3.colorPixel()
 			p4.colorPixel()
 			p5.colorPixel()
+			time.sleep(0.003)
 		
 		else:
 			pixels.fill((255, 204, 25))
