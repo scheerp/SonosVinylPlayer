@@ -66,7 +66,7 @@ try:
 				pixels.fill((255, 204, 25))
 				countIsActive = False
 
-			time.sleep(0.1)
+			time.sleep(0.05)
 			if (text == None):
 				emptyCount += 1
 
