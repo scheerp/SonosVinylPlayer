@@ -15,8 +15,9 @@ class Pixel:
     self.g = g
     self.b = b
 
+    g_factor =-3
+
   def colorPixel(self):
-    g_factor = -3
     #b_factor = 3
     
     if self.g < 3 or self.g > 252:
