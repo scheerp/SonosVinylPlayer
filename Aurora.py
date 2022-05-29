@@ -29,8 +29,11 @@ class Pixel:
     self.g = g
     self.b = b
 
+  def colorPixel(self):
     pixels[index] = (0, g, b)
 
 p0 = Pixel(0, 100, 150)
+p0.color()
 
 p1 = Pixel(1, 255, 100)
+p1.color()
