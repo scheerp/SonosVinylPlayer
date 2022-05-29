@@ -16,12 +16,14 @@ class Pixel:
     self.b = b
 
   def colorPixel(self):
+    time.sleep(0.03)
+
     pixels[self.index] = (0, self.g, self.b)
 
 
 while True:
-  p0 = Pixel(0, 100, 150)
+  p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
   p0.colorPixel()
 
-  p1 = Pixel(1, 255, 100)
+  p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
   p1.colorPixel()
