@@ -31,10 +31,10 @@ def wheel(pos):
         g = b = 100
     elif pos < 85:
         g = int(255 - pos)
-        b = 0
+        b = 100
     elif pos < 170:
         pos -= 85
-        g = 0
+        g = 100
         b = int(pos)
     else:
         pos -= 170
