@@ -106,7 +106,6 @@ def vynil_player():
 
 def update_aurora():
 	global run_aurora_animation
-	print("started thread")
 
 	while True:
 		if run_aurora_animation:
@@ -116,9 +115,9 @@ def update_aurora():
 			p3.colorPixel()
 			p4.colorPixel()
 			p5.colorPixel()
-
-	pixels.fill((255, 204, 25))
-	print("end of thread")
+		
+		else:
+			pixels.fill((255, 204, 25))
 
 thread_aurora = Thread(target=update_aurora)
 thread_vynil_player = Thread(target=vynil_player)
