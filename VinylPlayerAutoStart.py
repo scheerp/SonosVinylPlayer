@@ -52,6 +52,7 @@ p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
 p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 def vynil_player():
+	global countIsActive
 	while True:
 		# print("Ready for some tunes!")
 		id, text = reader.read_no_block()
