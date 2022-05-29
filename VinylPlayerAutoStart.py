@@ -28,14 +28,14 @@ class Pixel:
 		if self.b_factor == 0:
 			self.b_factor +=1
 
-	if self.g_factor == 0:
-		self.g_factor += 1
-	
-	if self.g < 30 or self.g > 240:
-		self.g_factor = self.g_factor * -1
-	
-	if self.b < 50 or self.b > 240:
-		self.b_factor = self.b_factor * -1
+		if self.g_factor == 0:
+			self.g_factor += 1
+		
+		if self.g < 30 or self.g > 240:
+			self.g_factor = self.g_factor * -1
+		
+		if self.b < 50 or self.b > 240:
+			self.b_factor = self.b_factor * -1
 
 	self.g += self.g_factor
 	self.b += self.b_factor
