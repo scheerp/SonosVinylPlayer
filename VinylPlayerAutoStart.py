@@ -94,8 +94,7 @@ try:
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
 
-				for x in range(30):
-					thread_aurora.start()
+				thread_aurora.start()
 				emptyCount = 0
 				#pixels.fill((0, 200, 180))
 			else:
