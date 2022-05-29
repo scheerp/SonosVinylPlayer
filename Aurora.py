@@ -39,12 +39,12 @@ class Pixel:
     print('G:', self.g, 'GFACTOR:', self.g_factor)
     time.sleep(0.05)
 
-p0 = Pixel(0, 5, 5)
-p1 = Pixel(1, 5, 5)
-p2 = Pixel(2, 5, 5)
-p3 = Pixel(3, 5, 5)
-p4 = Pixel(4, 5, 5)
-p5 = Pixel(5, 5, 5)
+p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
+p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
+p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
+p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
+p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
+p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 while True:
   p0.colorPixel()
