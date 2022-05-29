@@ -7,6 +7,7 @@ import time
 import board
 import neopixel
 import random
+from threading import Thread
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 reader = SimpleMFRC522()
@@ -50,6 +51,17 @@ p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
 p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
 p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
+def update_aurora():
+	while True:
+		p0.colorPixel()
+		p1.colorPixel()
+		p2.colorPixel()
+		p3.colorPixel()
+		p4.colorPixel()
+		p5.colorPixel()
+
+thread_aurora = Tread(target=update_aurora)
+
 try:
 	while True:
 		# print("Ready for some tunes!")
@@ -83,12 +95,7 @@ try:
 				print("weiter wie gehabt")
 
 				for x in range(30):
-					p0.colorPixel()
-					p1.colorPixel()
-					p2.colorPixel()
-					p3.colorPixel()
-					p4.colorPixel()
-					p5.colorPixel()
+					thread_aurora.start()
 				emptyCount = 0
 				#pixels.fill((0, 200, 180))
 			else:
