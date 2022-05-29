@@ -19,10 +19,8 @@ class Pixel:
     g_factor = -3
     #b_factor = 3
     
-    if self.g < 3:
-      g_factor = 3
-    if self.g > 252:
-      g_factor = -3
+    if self.g < 3 or self.g > 252:
+      g_factor = g_factor * -1
     
     #if self.b < 3:
       #b_factor = 3
@@ -33,7 +31,7 @@ class Pixel:
     #self.b += b_factor
     print('G:', self.g, 'FACTOR:', g_factor)
     pixels[self.index] = (0, self.g, 0)
-    time.sleep(0.3)
+    time.sleep(0.1)
 
 p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
 # p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
