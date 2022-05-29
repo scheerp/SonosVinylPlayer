@@ -15,6 +15,7 @@ reader = SimpleMFRC522()
 
 countIsActive = False
 emptyCount = 0
+pausingThreshhold = 2
 previousRead = "nix"
 run_aurora_animation = False
 pixels.fill((255, 204, 25))
@@ -56,16 +57,17 @@ def vynil_player():
 	global countIsActive
 	global previousRead
 	global run_aurora_animation
+	global pausingThreshhold
 
 	while True:
-		print("Ready for some tunes!")
+		#print("Ready for some tunes!")
 		id, text = reader.read_no_block()
-		# print("emptyCount", emptyCount)
-		# print("text", text)
-		# print("countIsActive", countIsActive)
+		print("emptyCount", emptyCount)
+		#print("text", text)
+		#print("countIsActive", countIsActive)
 
 		if countIsActive:
-			if emptyCount > 3:
+			if emptyCount > pausingThreshhold:
 				print("pause Music")
 				stopR = requests.get("http://192.168.2.149:5005/pauseAll")
 				emptyCount = 0
@@ -130,8 +132,6 @@ try:
 	if not thread_aurora.is_alive():
 		thread_aurora.start()
 	
-	print(threading.active_count())
-	print(threading.enumerate())
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
 	GPIO.cleanup()
