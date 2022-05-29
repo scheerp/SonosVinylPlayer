@@ -40,7 +40,7 @@ class Pixel:
 
 		self.g += self.g_factor
 		self.b += self.b_factor
-		print("update!", self.g, self.b)
+		#print("update!", self.g, self.b)
 		pixels[self.index] = (0, self.g, self.b)
 		time.sleep(0.001)
 
@@ -117,6 +117,8 @@ thread_vynil_player = Thread(target=vynil_player)
 
 try:
 	thread_vynil_player.start()
+	print(threading.active_count())
+	print(threading.enumerate())
 except KeyboardInterrupt:
 	pixels.fill((0, 0, 0))
 	GPIO.cleanup()
