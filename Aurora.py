@@ -16,25 +16,25 @@ class Pixel:
     self.b = b
 
   def colorPixel(self):
-    time.sleep(0.03)
+    time.sleep(0.3)
     
     g_factor = -3
-    b_factor = 3
+    #b_factor = 3
     
     if self.g < 3:
       g_factor = 3
     if self.g > 252:
       g_factor = -3
     
-    if self.b < 3:
-      b_factor = 3
-    if self.b > 252:
-      b_factor = -3
+    #if self.b < 3:
+      #b_factor = 3
+    #if self.b > 252:
+      #b_factor = -3
 
     self.g += g_factor
-    self.b += b_factor
+    #self.b += b_factor
 
-    pixels[self.index] = (0, self.g, self.b)
+    pixels[self.index] = (0, self.g, 0)
 
 p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
 p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
