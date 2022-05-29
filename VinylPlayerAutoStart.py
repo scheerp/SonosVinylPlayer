@@ -37,10 +37,10 @@ class Pixel:
 		if self.b < 50 or self.b > 240:
 			self.b_factor = self.b_factor * -1
 
-	self.g += self.g_factor
-	self.b += self.b_factor
-	print("update!", self.g, self.b)
-	pixels[self.index] = (0, self.g, self.b)
+		self.g += self.g_factor
+		self.b += self.b_factor
+		print("update!", self.g, self.b)
+		pixels[self.index] = (0, self.g, self.b)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
 p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
