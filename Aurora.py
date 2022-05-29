@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: MIT
 
 # Simple test for NeoPixels on Raspberry Pi
+#!/usr/bin/env python
+
+import RPi.GPIO as GPIO
 import time
 import board
 import neopixel
@@ -28,19 +31,22 @@ class Pixel:
     self.g += self.g_factor + random.randint(1, 3)
     self.b += self.b_factor
     pixels[self.index] = (0, self.g, self.b)
+    print('G:' self.g, 'GFACTOR:', self.g_factor)
     time.sleep(0.05)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
-p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
-p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
-p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
-p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
-p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
+# p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
+# p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
+# p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
+# p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
+# p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 while True:
   p0.colorPixel()
-  p1.colorPixel()
-  p2.colorPixel()
-  p3.colorPixel()
-  p4.colorPixel()
-  p5.colorPixel()
+  # p1.colorPixel()
+  # p2.colorPixel()
+  # p3.colorPixel()
+  # p4.colorPixel()
+  # p5.colorPixel()
+
+GPIO.cleanup()
