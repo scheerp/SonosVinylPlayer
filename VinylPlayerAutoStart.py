@@ -106,7 +106,7 @@ def update_aurora():
 		p5.colorPixel()
 
 thread_aurora = Thread(target=update_aurora)
-thread_vynil_player = Thread(targer=vynil_player)
+thread_vynil_player = Thread(target=vynil_player)
 
 
 try:
