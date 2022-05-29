@@ -28,7 +28,7 @@ class Pixel:
     if self.b < 100 or self.b > 240:
       self.b_factor = self.b_factor * -1
 
-    self.g += self.g_factor + random.randint(1, 3)
+    self.g += self.g_factor
     self.b += self.b_factor
     pixels[self.index] = (0, self.g, self.b)
     print('G:', self.g, 'GFACTOR:', self.g_factor)
