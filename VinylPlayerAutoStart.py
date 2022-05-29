@@ -16,6 +16,7 @@ reader = SimpleMFRC522()
 countIsActive = False
 emptyCount = 0
 previousRead = "nix"
+run_aurora_animation = False
 pixels.fill((255, 204, 25))
 
 class Pixel:
@@ -55,6 +56,7 @@ p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 def vynil_player():
 	global countIsActive
 	global previousRead
+	global run_aurora_animation
 
 	while True:
 		# print("Ready for some tunes!")
@@ -71,6 +73,7 @@ def vynil_player():
 				previousRead = "nix"
 				pixels.fill((255, 204, 25))
 				countIsActive = False
+				run_aurora_animation = False
 
 			#time.sleep(0.05)
 			if (text == None):
@@ -88,6 +91,7 @@ def vynil_player():
 
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
+				run_aurora_animation = True
 
 				emptyCount = 0
 				#pixels.fill((0, 200, 180))
@@ -97,12 +101,15 @@ def vynil_player():
 				time.sleep(0.2)
 				pixels.fill((0, 0, 0))
 				emptyCount = 0
+				run_aurora_animation = False
 
 
 
 def update_aurora():
+	global run_aurora_animation
 	print("started thread")
-	while True:
+	
+	while run_aurora_animation:
 		p0.colorPixel()
 		p1.colorPixel()
 		p2.colorPixel()
