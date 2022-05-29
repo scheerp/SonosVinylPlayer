@@ -21,14 +21,14 @@ class Pixel:
     g_factor = -3
     b_factor = 3
     
-    if self.g < 0:
+    if self.g < 3:
       g_factor = 3
-    if self.g > 255:
+    if self.g > 252:
       g_factor = -3
     
-    if self.b < 0:
+    if self.b < 3:
       b_factor = 3
-    if self.b > 255:
+    if self.b > 252:
       b_factor = -3
 
     self.g += g_factor
