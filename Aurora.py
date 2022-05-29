@@ -29,7 +29,7 @@ class Pixel:
     self.g = g
     self.b = b
 
-  pixels[index] = (0, g, b)
+    pixels[index] = (0, g, b)
 
 p0 = Pixel(0, 100, 150)
 
