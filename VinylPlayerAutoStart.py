@@ -8,6 +8,7 @@ import board
 import neopixel
 import random
 from threading import Thread
+import threading
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 reader = SimpleMFRC522()
