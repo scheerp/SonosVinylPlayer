@@ -38,10 +38,10 @@ class Pixel:
 
 p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
 p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
-p2 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
-p3 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
-p4 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
-p5 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
+p2 = Pixel(2, random.randint(100, 255), random.randint(100, 255))
+p3 = Pixel(3, random.randint(100, 255), random.randint(100, 255))
+p4 = Pixel(4, random.randint(100, 255), random.randint(100, 255))
+p5 = Pixel(5, random.randint(100, 255), random.randint(100, 255))
 
 while True:
   p0.colorPixel()
