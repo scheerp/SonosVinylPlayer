@@ -115,7 +115,7 @@ def update_aurora():
 			p3.colorPixel()
 			p4.colorPixel()
 			p5.colorPixel()
-			time.sleep(0.003)
+			time.sleep(0.01)
 		
 		else:
 			pixels.fill((255, 204, 25))
