@@ -87,8 +87,6 @@ def vynil_player():
 				emptyCount = 0
 				countIsActive = True
 				run_aurora_animation = True
-				if not thread_aurora.is_alive():
-					thread_aurora.start()
 
 			elif (text.strip().find("spotify") != -1):
 				print("weiter wie gehabt")
@@ -117,8 +115,7 @@ def update_aurora():
 		p3.colorPixel()
 		p4.colorPixel()
 		p5.colorPixel()
-	
-	
+
 	pixels.fill((255, 204, 25))
 	print("end of thread")
 
@@ -129,6 +126,10 @@ thread_vynil_player = Thread(target=vynil_player)
 try:
 	if not thread_vynil_player.is_alive():
 		thread_vynil_player.start()
+		
+	if not thread_aurora.is_alive():
+		thread_aurora.start()
+	
 	print(threading.active_count())
 	print(threading.enumerate())
 except KeyboardInterrupt:
