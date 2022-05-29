@@ -26,6 +26,7 @@ pixels = neopixel.NeoPixel(
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
+    print(pos)
     if pos < 100 or pos > 255:
         g = b = 100
     elif pos < 85:
