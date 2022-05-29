@@ -127,7 +127,8 @@ thread_vynil_player = Thread(target=vynil_player)
 
 
 try:
-	thread_vynil_player.start()
+	if not thread_vynil_player.is_alive():
+		thread_vynil_player.start()
 	print(threading.active_count())
 	print(threading.enumerate())
 except KeyboardInterrupt:
