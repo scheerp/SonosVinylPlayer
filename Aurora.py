@@ -22,10 +22,10 @@ class Pixel:
 
   def colorPixel(self):
     
-    if self.g < 100 or self.g > 240:
+    if self.g < 50 or self.g > 240:
       self.g_factor = self.g_factor * -1
     
-    if self.b < 100 or self.b > 240:
+    if self.b < 80 or self.b > 240:
       self.b_factor = self.b_factor * -1
 
     self.g += self.g_factor
@@ -35,18 +35,18 @@ class Pixel:
     time.sleep(0.05)
 
 p0 = Pixel(0, random.randint(100, 240), random.randint(100, 240))
-# p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
-# p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
-# p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
-# p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
-# p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
+p1 = Pixel(1, random.randint(100, 240), random.randint(100, 240))
+p2 = Pixel(2, random.randint(100, 240), random.randint(100, 240))
+p3 = Pixel(3, random.randint(100, 240), random.randint(100, 240))
+p4 = Pixel(4, random.randint(100, 240), random.randint(100, 240))
+p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 while True:
   p0.colorPixel()
-  # p1.colorPixel()
-  # p2.colorPixel()
-  # p3.colorPixel()
-  # p4.colorPixel()
-  # p5.colorPixel()
+  p1.colorPixel()
+  p2.colorPixel()
+  p3.colorPixel()
+  p4.colorPixel()
+  p5.colorPixel()
 
 GPIO.cleanup()
