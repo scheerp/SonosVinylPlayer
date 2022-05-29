@@ -33,7 +33,7 @@ class Pixel:
     pixels[index] = (0, g, b)
 
 p0 = Pixel(0, 100, 150)
-p0.color()
+p0.colorPixel()
 
 p1 = Pixel(1, 255, 100)
-p1.color()
+p1.colorPixel()
