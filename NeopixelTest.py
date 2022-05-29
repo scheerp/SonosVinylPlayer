@@ -23,8 +23,11 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.4, auto_write=False, pixel_order=ORDER
 )
 
-global g = random.randint(100, 255)
-global b = random.randint(90, 255)
+global g
+g = random.randint(100, 255)
+
+global b
+b = random.randint(90, 255)
 
 def wheel2():
     direction_g = random.choice([-3, 3])
