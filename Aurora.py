@@ -20,8 +20,8 @@ class Pixel:
 
     pixels[self.index] = (0, self.g, self.b)
 
-  p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
-  p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
+p0 = Pixel(0, random.randint(100, 255), random.randint(100, 255))
+p1 = Pixel(1, random.randint(100, 255), random.randint(100, 255))
 
 while True:
   p0.colorPixel()
