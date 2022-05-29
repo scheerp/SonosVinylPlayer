@@ -14,22 +14,20 @@ class Pixel:
     self.index = index
     self.g = g
     self.b = b
-
-    g_factor =-3
+    self.g_factor =-3
 
   def colorPixel(self):
     #b_factor = 3
     
-    global g_factor
     if self.g < 3 or self.g > 252:
-      g_factor = g_factor * -1
+      self.g_factor = self.g_factor * -1
     
     #if self.b < 3:
       #b_factor = 3
     #if self.b > 252:
       #b_factor = -3
 
-    self.g += g_factor
+    self.g += self.g_factor
     #self.b += b_factor
     print('G:', self.g, 'FACTOR:', g_factor)
     pixels[self.index] = (0, self.g, 0)
