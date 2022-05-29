@@ -77,13 +77,12 @@ try:
 				r = requests.get(getRequest)
 				previousRead = text
 				
-				while True:
-					p0.colorPixel()
-					p1.colorPixel()
-					p2.colorPixel()
-					p3.colorPixel()
-					p4.colorPixel()
-					p5.colorPixel()
+				p0.colorPixel()
+				p1.colorPixel()
+				p2.colorPixel()
+				p3.colorPixel()
+				p4.colorPixel()
+				p5.colorPixel()
 
 				emptyCount = 0
 				countIsActive = True
