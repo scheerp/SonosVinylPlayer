@@ -34,8 +34,10 @@ class Pixel:
     print(self.index, self.g, self.b)
     pixels[self.index] = (0, self.g, self.b)
 
-p0 = Pixel(0, 100, 150)
-p0.colorPixel()
 
-p1 = Pixel(1, 255, 100)
-p1.colorPixel()
+while True:
+  p0 = Pixel(0, 100, 150)
+  p0.colorPixel()
+
+  p1 = Pixel(1, 255, 100)
+  p1.colorPixel()
