@@ -5,6 +5,7 @@
 import time
 import board
 import neopixel
+import random
 
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
@@ -22,6 +23,14 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.4, auto_write=False, pixel_order=ORDER
 )
 
+g = random.randint(100, 255)
+b = random.randint(90, 255)
+
+def wheel2():
+    direction_g = random.choice([-3, 3])
+    direction_b = random.choice([-3, 3])
+    g = g + direction_g
+    b = b + direction_b
 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
@@ -45,15 +54,22 @@ def wheel(pos):
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
 
+def auroro_cycle(wait):
+    for j in range(255):
+        for i in range(num_pixels):
+            pixel_index = (i * 256 // num_pixels) + j
+            pixels[i] = wheel2()
+        pixels.show()
+        time.sleep(wait)
+
 def rainbow_cycle(wait):
     for j in range(255):
         for i in range(num_pixels):
             pixel_index = (i * 256 // num_pixels) + j
             pixels[i] = wheel(pixel_index & 255)
-            print(pixel_index & 255)
         pixels.show()
         time.sleep(wait)
 
 
 while True:
-    rainbow_cycle(0.03)  # rainbow cycle with 1ms delay per step
+    auroro_cycle(0.03)  # rainbow cycle with 1ms delay per step
