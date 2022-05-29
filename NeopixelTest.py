@@ -27,12 +27,10 @@ g = random.randint(100, 255)
 b = random.randint(90, 255)
 
 def wheel2():
-    g = g
-    b = b
     direction_g = random.choice([-3, 3])
     direction_b = random.choice([-3, 3])
-    g = g + direction_g
-    b = b + direction_b
+    g += 1 direction_g
+    b += 1 direction_b
 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
