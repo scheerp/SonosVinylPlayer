@@ -27,7 +27,8 @@ def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
     if pos < 0 or pos > 255:
-        g = b = 100
+        #g = b = 100
+        print(5)
     elif pos < 85:
         g = int(255 - pos * 3)
         b = 100
