@@ -16,7 +16,7 @@ reader = SimpleMFRC522()
 countIsActive = False
 emptyCount = 0
 previousRead = "nix"
-run_aurora_animation = False
+run_aurora_animation = True
 pixels.fill((255, 204, 25))
 
 class Pixel:
