@@ -5,7 +5,7 @@ import time
 import board
 import neopixel
 
-pixels = neopixel.NeoPixel(board.D18, 2)
+pixels = neopixel.NeoPixel(board.D18, 6)
 
 while True:
 	print("Ready for some tunes!")
