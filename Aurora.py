@@ -45,7 +45,7 @@ class Pixel:
     self.g += self.g_factor
     self.b += self.b_factor
     pixels[self.index] = (self.r, self.g, self.b)
-    time.sleep(0.001)
+    time.sleep(0.03)
 
 p0 = Pixel(0, random.randint(10, 40), random.randint(100, 240), random.randint(100, 240))
 p1 = Pixel(1, random.randint(10, 40), random.randint(100, 240), random.randint(100, 240))
