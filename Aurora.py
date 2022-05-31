@@ -32,7 +32,7 @@ class Pixel:
     if self.g_factor == 0:
       self.g_factor += 1
     
-    if self.r < 30 or self.gr> 50:
+    if self.r < 30 or self.r> 50:
       self.r_factor = self.r_factor * -1
 
     if self.g < 30 or self.g > 240:
