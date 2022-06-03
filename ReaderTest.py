@@ -7,7 +7,6 @@ sys.path.insert(1, os.path.split(sys.path[0])[0])
 
 import nfc
 import nfc.clf
-import nfc.ndef
 import nfc.tag
 
 def connected(tag): print(tag.ndef.message.pretty() if tag.ndef else "Sorry, no NDEF"); return False
