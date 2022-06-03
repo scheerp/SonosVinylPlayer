@@ -1,3 +1,3 @@
 import nfc
-with nfc.ContactlessFrontend('udp') as clf:
+clf = nfc.ContactlessFrontend('usb')
 	print(clf)
