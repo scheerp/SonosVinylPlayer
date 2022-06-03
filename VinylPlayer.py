@@ -14,6 +14,7 @@ pixels = neopixel.NeoPixel(board.D18, 6)
 # this function gets called when a NFC tag is detected
 def touched(tag):
     global sonosroom_local
+    print('Say hello', tag)
 
     if tag.ndef:
         print(tag.ndef)
