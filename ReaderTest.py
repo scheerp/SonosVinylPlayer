@@ -1,12 +1,17 @@
-from nfc import ContactlessFrontend
-import time
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
 
-def connected(tag):
-    ident = ''.join('{:02x}'.format(ord(c)) for c in tag.identifier)
-    print(ident)
-    return False
+import os
+import sys
+sys.path.insert(1, os.path.split(sys.path[0])[0])
 
-clf = ContactlessFrontend('usb')
-while True:
-    clf.connect(rdwr={'on-connect': connected})
-    time.sleep(1)
+import nfc
+import nfc.clf
+import nfc.ndef
+import nfc.tag
+
+def connected(tag): print(tag.ndef.message.pretty() if tag.ndef else "Sorry, no NDEF"); return False
+clf = nfc.ContactlessFrontend('usb')
+tag = clf.connect(rdwr={'on-connect': connected})
+
+clf.close()
