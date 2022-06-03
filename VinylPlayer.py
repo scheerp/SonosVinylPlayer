@@ -14,6 +14,7 @@ pixels = neopixel.NeoPixel(board.D18, 6)
 def released(tag):
     print("card released")
     print(tag)
+    stop_r = requests.get(usersettings.sonoshttpaddress + "/pauseAll")
 
 # this function gets called when a NFC tag is detected
 def touched(tag):
