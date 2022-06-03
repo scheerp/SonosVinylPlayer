@@ -11,6 +11,10 @@ import neopixel
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 
+def released(tag):
+    print("card released")
+    print(tag)
+
 # this function gets called when a NFC tag is detected
 def touched(tag):
     global sonosroom_local
@@ -174,7 +178,7 @@ print("")
 
 while True:
     try:
-        reader.connect(rdwr={'on-connect': touched, 'beep-on-connect': False})
+        reader.connect(rdwr={'on-connect': touched, 'on-release': released ,'beep-on-connect': False})
         time.sleep(0.1);
     
     except KeyboardInterrupt:
