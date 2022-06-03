@@ -4,6 +4,7 @@ from smartcard.CardType import AnyCardType
 from smartcard import util
 
 WAIT_FOR_SECONDS = 5
+print('fuxk you')
 
 if __name__ == '__main__':
     # respond to the insertion of any type of smart card
