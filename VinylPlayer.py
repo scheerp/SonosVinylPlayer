@@ -166,6 +166,8 @@ except:
 if r.status_code == 200:
     print ("... and API responding")
 
+
+pixels.fill((255, 204, 25))
 print("")
 print("OK, all ready! Present an NFC tag.")
 print("")
