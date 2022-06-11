@@ -229,7 +229,7 @@ def update_aurora():
 			#p5.colorPixel()
 			time.sleep(0.01)
 		
-		else:
+		#else:
 			#pixels.fill((255, 204, 25))
 
 thread_aurora = Thread(target=update_aurora)
