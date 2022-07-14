@@ -50,12 +50,14 @@ p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 
 def released(tag):
 	global run_aurora_animation
+	global start_shutdown_sequence
 	print("Pause Music")
 	run_aurora_animation = False
 	stop_r = requests.get(usersettings.sonoshttpaddress + "/pauseAll")
 
 # this function gets called when a NFC tag is detected
 def touched(tag):
+	global start_shutdown_sequence
 	global run_aurora_animation
 	global sonosroom_local
 	print('Say hello', tag)
