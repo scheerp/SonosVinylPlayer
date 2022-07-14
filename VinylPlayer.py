@@ -93,6 +93,7 @@ def touched(tag):
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
 				print ("Pi will be shut down")
+				os.system("sudo shutdown now -h")
 				return True
 
 				
@@ -110,6 +111,7 @@ def touched(tag):
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
 				print ("Pi will be rebooted")
+				os.system("sudo reboot")
 				return True
 			
 			#check if a full HTTP URL read from NFC
