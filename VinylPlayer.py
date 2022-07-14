@@ -77,6 +77,7 @@ def touched(tag):
 			servicetype = ""
 
 			if receivedtext == "shutdown":
+				run_aurora_animation = False
 				pixels.fill((255, 0, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
@@ -93,6 +94,7 @@ def touched(tag):
 
 				
 			if receivedtext == "reboot":
+				run_aurora_animation = False
 				pixels.fill((0, 255, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
