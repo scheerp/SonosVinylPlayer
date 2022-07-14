@@ -14,6 +14,7 @@ import threading
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 run_aurora_animation = False
+start_shutdown_sequence = False
 
 class Pixel:
 	def __init__(self, index, g, b):
@@ -77,7 +78,7 @@ def touched(tag):
 			servicetype = ""
 
 			if receivedtext == "shutdown":
-				run_aurora_animation = False
+				start_shutdown_sequence = False
 				pixels.fill((255, 0, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
@@ -94,7 +95,7 @@ def touched(tag):
 
 				
 			if receivedtext == "reboot":
-				run_aurora_animation = False
+				start_shutdown_sequence = False
 				pixels.fill((0, 255, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
@@ -251,19 +252,21 @@ print("")
 
 def update_aurora():
 	global run_aurora_animation
+	global start_shutdown_sequence
 
 	while True:
-		if run_aurora_animation:
-			p0.colorPixel()
-			p1.colorPixel()
-			p2.colorPixel()
-			p3.colorPixel()
-			p4.colorPixel()
-			p5.colorPixel()
-			time.sleep(0.01)
-		
-		else:
-			pixels.fill((255, 204, 25))
+		if !start_shutdown_sequence:
+			if run_aurora_animation:
+				p0.colorPixel()
+				p1.colorPixel()
+				p2.colorPixel()
+				p3.colorPixel()
+				p4.colorPixel()
+				p5.colorPixel()
+				time.sleep(0.01)
+			
+			else:
+				pixels.fill((255, 204, 25))
 
 thread_aurora = Thread(target=update_aurora)
 
