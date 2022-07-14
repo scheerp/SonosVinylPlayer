@@ -255,7 +255,7 @@ def update_aurora():
 	global start_shutdown_sequence
 
 	while True:
-		if !start_shutdown_sequence:
+		if not start_shutdown_sequence:
 			if run_aurora_animation:
 				p0.colorPixel()
 				p1.colorPixel()
