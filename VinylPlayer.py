@@ -11,6 +11,7 @@ import neopixel
 import random
 from threading import Thread
 import threading
+import os
 
 pixels = neopixel.NeoPixel(board.D18, 6)
 run_aurora_animation = False
