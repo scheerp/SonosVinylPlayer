@@ -80,7 +80,7 @@ def touched(tag):
 			servicetype = ""
 
 			if receivedtext == "shutdown":
-				start_shutdown_sequence = False
+				start_shutdown_sequence = True
 				pixels.fill((255, 0, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
@@ -97,7 +97,7 @@ def touched(tag):
 
 				
 			if receivedtext == "reboot":
-				start_shutdown_sequence = False
+				start_shutdown_sequence = True
 				pixels.fill((0, 255, 0))
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
