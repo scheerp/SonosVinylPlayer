@@ -89,6 +89,7 @@ def touched(tag):
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
 				print ("Pi will be shut down")
+				return True
 
 				
 			if receivedtext == "reboot":
@@ -104,6 +105,7 @@ def touched(tag):
 				time.sleep(1);
 				pixels.fill((0, 0, 0))
 				print ("Pi will be rebooted")
+				return True
 			
 			#check if a full HTTP URL read from NFC
 			if receivedtext_lower.startswith ('http'):
