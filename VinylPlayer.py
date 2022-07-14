@@ -76,34 +76,34 @@ def touched(tag):
 
 			servicetype = ""
 
-			if receivedtext == "shutdown"
-				pixels.fill((255, 0, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				time.sleep(1);
-				pixels.fill((255, 0, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				time.sleep(1);
-				pixels.fill((255, 0, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				print ("Pi will be shut down")
+			# if receivedtext == "shutdown"
+			# 	pixels.fill((255, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((255, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((255, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			print ("Pi will be shut down")
 
 				
-			if receivedtext == "reboot"
-				pixels.fill((0, 255, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				time.sleep(1);
-				pixels.fill((0, 255, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				time.sleep(1);
-				pixels.fill((0, 255, 0))
-				time.sleep(1);
-				pixels.fill((0, 0, 0))
-				print ("Pi will be rebooted")
+			# if receivedtext == "reboot"
+			# 	pixels.fill((0, 255, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 255, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 255, 0))
+			# 	time.sleep(1);
+			# 	pixels.fill((0, 0, 0))
+			print ("Pi will be rebooted")
 			
 			#check if a full HTTP URL read from NFC
 			if receivedtext_lower.startswith ('http'):
