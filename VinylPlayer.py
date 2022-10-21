@@ -190,7 +190,7 @@ def touched(tag):
 				r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
 
 			#use the request function to get the URL built previously, triggering the sonos
-			if last_nfc_read != urltoget
+			if last_nfc_read != urltoget:
 				print ("Fetching URL via HTTP: "+ urltoget)
 				r = requests.get(urltoget)
 
