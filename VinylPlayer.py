@@ -16,6 +16,7 @@ import os
 pixels = neopixel.NeoPixel(board.D18, 6)
 run_aurora_animation = False
 start_shutdown_sequence = False
+last_nfc_read = ""
 
 class Pixel:
 	def __init__(self, index, g, b):
@@ -52,8 +53,10 @@ p5 = Pixel(5, random.randint(100, 240), random.randint(100, 240))
 def released(tag):
 	global run_aurora_animation
 	global start_shutdown_sequence
+	global last_nfc_read
 	print("Pause Music")
 	run_aurora_animation = False
+	last_nfc_read = ""
 	stop_r = requests.get(usersettings.sonoshttpaddress + "/pauseAll")
 
 # this function gets called when a NFC tag is detected
@@ -61,6 +64,7 @@ def touched(tag):
 	global start_shutdown_sequence
 	global run_aurora_animation
 	global sonosroom_local
+	global last_nfc_read
 	print('Say hello', tag)
 
 	if tag.ndef:
@@ -186,15 +190,17 @@ def touched(tag):
 				r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
 
 			#use the request function to get the URL built previously, triggering the sonos
-			print ("Fetching URL via HTTP: "+ urltoget)
-			r = requests.get(urltoget)
+			if last_nfc_read != urltoget
+				print ("Fetching URL via HTTP: "+ urltoget)
+				r = requests.get(urltoget)
 
-			if r.status_code != 200:
-				print ("Error code returned from Sonos API")
-				return True
-			
-			print ("Sonos API reports " + r.json()['status'])
-			run_aurora_animation = True
+				if r.status_code != 200:
+					print ("Error code returned from Sonos API")
+					return True
+				
+				print ("Sonos API reports " + r.json()['status'])
+				run_aurora_animation = True
+				last_nfc_read = urltoget
 
 	else:
 		print("")
