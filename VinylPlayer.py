@@ -196,11 +196,11 @@ def touched(tag):
 
 				if r.status_code != 200:
 					print ("Error code returned from Sonos API")
+					run_aurora_animation = True
+					last_nfc_read = urltoget
 					return True
 				
 				print ("Sonos API reports " + r.json()['status'])
-				run_aurora_animation = True
-				last_nfc_read = urltoget
 
 	else:
 		print("")
