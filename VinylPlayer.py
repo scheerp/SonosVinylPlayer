@@ -186,7 +186,7 @@ def touched(tag):
 				r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
 
 			#use the request function to get the URL built previously, triggering the sonos
-			#if run_aurora_animation != True:
+			if run_aurora_animation != True:
 			print ("Fetching URL via HTTP: "+ urltoget)
 			r = requests.get(urltoget)
 			
