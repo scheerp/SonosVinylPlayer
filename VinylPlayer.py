@@ -187,15 +187,15 @@ def touched(tag):
 
 			#use the request function to get the URL built previously, triggering the sonos
 			if run_aurora_animation != True:
-			print ("Fetching URL via HTTP: "+ urltoget)
-			r = requests.get(urltoget)
-			
-			print ("Sonos API reports " + r.json()['status'])
-			run_aurora_animation = True
+				print ("Fetching URL via HTTP: "+ urltoget)
+				r = requests.get(urltoget)
+				
+				print ("Sonos API reports " + r.json()['status'])
+				run_aurora_animation = True
 
-			if r.status_code != 200:
-				print ("Error code returned from Sonos API")
-				return True
+				if r.status_code != 200:
+					print ("Error code returned from Sonos API")
+					return True
 
 	else:
 		print("")
