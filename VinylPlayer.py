@@ -186,16 +186,16 @@ def touched(tag):
 				r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
 
 			#use the request function to get the URL built previously, triggering the sonos
-			if run_aurora_animation != True:
-				print ("Fetching URL via HTTP: "+ urltoget)
-				r = requests.get(urltoget)
+			#if run_aurora_animation != True:
+			print ("Fetching URL via HTTP: "+ urltoget)
+			r = requests.get(urltoget)
 
-				if r.status_code != 200:
-					print ("Error code returned from Sonos API")
-					return True
-				
-				print ("Sonos API reports " + r.json()['status'])
-				run_aurora_animation = True
+			if r.status_code != 200:
+				print ("Error code returned from Sonos API")
+				return True
+			
+			print ("Sonos API reports " + r.json()['status'])
+			run_aurora_animation = True
 
 	else:
 		print("")
