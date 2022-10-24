@@ -181,9 +181,10 @@ def touched(tag):
 				return True
 
 			#clear the queue for every service request type except commands
-			if servicetype != "command":
-				print ("Clearing Sonos queue")
-				r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
+			if run_aurora_animation != True:
+				if servicetype != "command":
+					print ("Clearing Sonos queue")
+					r = requests.get(usersettings.sonoshttpaddress + "/" + sonosroom_local + "/clearqueue")
 
 			#use the request function to get the URL built previously, triggering the sonos
 			if run_aurora_animation != True:
